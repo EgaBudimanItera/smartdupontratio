@@ -36,7 +36,7 @@
                 </span>
             </div>
             <div class="widget-body">
-             <div><a href="<?=base_url()?>perusahaan/formtambah" class="btn btn-primary">Tambah Data</a></div>
+             <div><a href="<?=base_url()?>lk/formtambah" class="btn btn-primary">Tambah Data</a></div>
              <br>
              <div id="info-alert"><?=@$this->session->flashdata('msg')?></div>
 
@@ -59,12 +59,12 @@
                     <td><?=$no++?>.</td>
                     <td><?=$l->idperusahaan?></td>
                     <td><?=$l->namaperusahaan?></td>
-                    <td><?=$l->keterangan?></td>
+                    <td><?=$l->tahun?></td>
                     <td>
-                      <a data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-xs btn-warning" href="<?=base_url()?>perusahaan/formubah/<?=$l->idperusahaan?>">
+                      <a data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-xs btn-warning" href="<?=base_url()?>lk/formubah/<?=$l->id?>">
                         <i class="icon-pencil"></i>                
                       </a>
-                      <a data-toggle="tooltip" data-placement="bottom" title="Hapus" onclick="return confirm('yakin akan menghapus data ini?')" class="btn btn-xs btn-danger" href="<?=base_url()?>perusahaan/hapus/<?=$l->idperusahaan?>" >
+                      <a data-toggle="tooltip" data-placement="bottom" title="Hapus" class="btn btn-xs btn-danger" href="<?=base_url()?>lk/hapus/<?=$l->id?>" >
                         <i class="icon-trash"></i>  
                       </a>
                     </td>

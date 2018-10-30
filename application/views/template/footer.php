@@ -35,6 +35,7 @@
         <script src="<?php echo base_url() ?>assets/js/scripts.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/assets/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url() ?>assets/assets/uniform/jquery.uniform.min.js"></script>
+         <script type="text/javascript" src="<?=base_url()?>assets/assets/chosen-bootstrap/chosen/chosen.jquery.min.js"></script>
         <script src="<?php echo base_url() ?>assets/js/scripts.js"></script>
         <script src="<?php echo base_url() ?>assets/js/ui-jqueryui.js"></script>
         <script>

@@ -44,30 +44,44 @@
                   </button>
                 </div>
                 <br>
-                <form action="<?=base_url()?>perusahaan/prosesubah" role="form" method="post" class="form-horizontal">
+                <form action="<?=base_url()?>lk/prosessimpan" role="form" method="post" class="form-horizontal">
                   <div class="control-group primary">
-                    <label class="control-label" for="inputWarning" >ID Perusahaan</label>
-
+                    <label class="control-label" for="inputWarning" >Tahun</label>
                     <div class="controls">
-                       <input type="text" class="span4" value="<?=$list->idperusahaan?>" id="idperusahaan" readonly name="idperusahaan" />
+                       <select name="tahun" class="span6 chosen" id="tahun">
+                         <option value="">--Pilih--</option>
+                         <?php
+                         $awal=date('Y');
+                         $akhir=$awal+5;
+                         $awal=$awal-5;
+                         for($i=$awal;$i<=$akhir;$i++){
+                         ?>
+                          <option value="<?=$i?>"><?=$i?></option>
+                         <?php
+                         }
+                         ?>
+                       </select>
+                      
                        <span class="help-inline"></span>
                     </div>
                   </div> 
                   <div class="control-group primary">
-                    <label class="control-label" for="inputWarning">Nama Perusahaan</label>
-
+                    <label class="control-label" for="inputWarning" >Perusahaan</label>
                     <div class="controls">
-                       <input type="text" class="span6" id="namaperusahaan" value="<?=$list->namaperusahaan?>" required name="namaperusahaan" />
+                       <select name="idperusahaan" class="span6 chosen" id="idperusahaan">
+                         <option value="">--Pilih--</option>
+                         <?php
+                         foreach($perusahaan as $p){
+                         ?>
+                          <option value="<?=$p->idperusahaan?>"><?=$p->namaperusahaan?></option>
+                         <?php
+                         }
+                         ?>
+                       </select>
+                      
                        <span class="help-inline"></span>
                     </div>
-                  </div> 
-                  <div class="control-group primary">
-                    <label class="control-label" for="inputWarning">Keterangan</label>
-                    <div class="controls">
-                       <textarea name="keterangan" class="span6"><?=$list->keterangan?></textarea>
-                       <span class="help-inline"></span>
-                    </div>
-                  </div>
+                  </div>  
                   
                   <div class="form-actions">
                     <button type="submit" class="btn btn-primary"><i class="icon-ok"></i>Simpan Data</button>

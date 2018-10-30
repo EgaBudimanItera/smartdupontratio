@@ -36,6 +36,21 @@ class M_perusahaan extends CI_Model {
         return true;
     }
 
+    function ubah(){
+        $data=array(
+            'namaperusahaan'=>$this->input->post('namaperusahaan',true),
+            'keterangan'=>$this->input->post('keterangan',true),
+        );
+        $this->db->where('idperusahaan',$this->input->post('idperusahaan',true));
+        $this->db->update('perusahaan',$data);
+        return trus;
+    }
+
+    function hapus($id){
+        $this->db->delete('perusahaan', array('idperusahaan' => $id)); 
+        return true;
+    }
+
     function listall(){
     	$query = $this->db->get('perusahaan');
     	return $query;

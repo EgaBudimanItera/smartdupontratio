@@ -51,4 +51,38 @@ class Perusahaan extends CI_Controller {
 	        redirect(base_url().'perusahaan');
 		}
 	}
+
+	public function prosesubah(){
+		$ubah=$this->M_perusahaan->ubah();
+		if($ubah){
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Success!</strong> Data berhasil diubah !</div>'
+	        );
+	        redirect(base_url().'perusahaan');
+		}else{
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Gagal!</strong> Data gagal diubah !</div>'
+	        );
+	        redirect(base_url().'perusahaan');
+		}
+	}
+
+	public function hapus($id){
+		$hapus=$this->M_perusahaan->hapus($id);
+		if($hapus){
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Success!</strong> Data berhasil dihapus !</div>'
+	        );
+	        redirect(base_url().'perusahaan');
+		}else{
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Gagal!</strong> Data gagal dihapus !</div>'
+	        );
+	        redirect(base_url().'perusahaan');
+		}
+	}
 }

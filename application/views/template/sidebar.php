@@ -29,24 +29,24 @@
                         
                     </ul>
                 </li>
-                <li class="has-sub <?php if($link=='perusahaan' ||$link=="periodehitung"){echo'active';}?>">
+                <li class="has-sub <?php if($link=='lk'){echo'active';}?>">
                     <a href="javascript:;" class="">
                         <span class="icon-box"> <i class="icon-suitcase"></i></span>Laporan Keuangan
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li class="<?php if($link=='perusahaan'){echo'active';}?>"><a href="#">List Laporan Keuangan </a></li>
+                        <li class="<?php if($link=='lk'){echo'active';}?>"><a href="<?=base_url()?>lk">List Laporan Keuangan </a></li>
                     </ul>
                 </li>
-                <li class="has-sub <?php if($link=='perusahaan' ||$link=="periodehitung"){echo'active';}?>">
+                <li class="has-sub <?php if($link=='dupont'||$link=='distribusi'||$link=='keterangan'){echo'active';}?>">
                     <a href="javascript:;" class="">
                         <span class="icon-box"> <i class="icon-tasks"></i></span> Perhitungan
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li class="<?php if($link=='perusahaan'){echo'active';}?>"><a href="#">Rasio Du Pont </a></li>
-                        <li class="<?php if($link=='perusahaan'){echo'active';}?>"><a href="#">Distribusi</a></li>
-                        <li class="<?php if($link=='perusahaan'){echo'active';}?>"><a href="#">Keterangan Perhitungan</a></li>
+                        <li class="<?php if($link=='dupont'){echo'active';}?>"><a href="#">Rasio Du Pont </a></li>
+                        <li class="<?php if($link=='distribusi'){echo'active';}?>"><a href="#">Distribusi</a></li>
+                        <li class="<?php if($link=='keterangan'){echo'active';}?>"><a href="#">Keterangan Perhitungan</a></li>
                     </ul>
                 </li>
             </ul>
