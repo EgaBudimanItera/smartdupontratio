@@ -25,7 +25,7 @@
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub">
-                        <li class="<?php if($link=='perusahaan'){echo'active';}?>"><a href="#">List Perusahaan </a></li>
+                        <li class="<?php if($link=='perusahaan'){echo'active';}?>"><a href="<?=base_url()?>perusahaan">List Perusahaan </a></li>
                         
                     </ul>
                 </li>
