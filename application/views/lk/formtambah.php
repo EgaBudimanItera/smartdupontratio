@@ -9,13 +9,13 @@
                     
         <!-- BEGIN PAGE TITLE & BREADCRUMB-->
         <h3 class="page-title">
-          Data Perusahaan
+          Data Laporan Keuangan
         </h3>
         <ul class="breadcrumb">
           <li>
               <a href="#"><i class="icon-home"></i></a><span class="divider">&nbsp;</span>
           </li>
-          <li><a href="#">Perusahaan</a><span class="divider">&nbsp;</span></li>
+          <li><a href="#">Laporan Keuangan</a><span class="divider">&nbsp;</span></li>
           <li><a href="#">Tambah Data</a><span class="divider-last">&nbsp;</span></li>
         </ul>
         <!-- END PAGE TITLE & BREADCRUMB-->

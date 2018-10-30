@@ -26,6 +26,25 @@ class Lk extends CI_Controller {
 		$this->load->view('template/wrapper',$data);	
 	}
 
+	public function formtambahdetail($id){
+		$data=array(
+			'page'=>'lk/formtambahdetail',
+			'link'=>'lk',
+			'id'=>$id,
+		);
+		$this->load->view('template/wrapper',$data);	
+	}
+
+	public function formdetaillk($id){
+		$data=array(
+			'page'=>'lk/detaillk',
+			'link'=>'lk',
+			'listlk'=>$this->M_lk->listlkwhere($id)->row(),
+			'list' => $this->M_lk->detaillk($id)->result(),
+		);
+		$this->load->view('template/wrapper',$data);	
+	}
+
 	public function prosessimpan(){
 		$simpan=$this->M_lk->simpanlk();
 		if($simpan){
@@ -38,6 +57,23 @@ class Lk extends CI_Controller {
 			$this->session->set_flashdata(
 	            'msg', 
 	            '<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Gagal!</strong> Data gagal disimpan !</div>'
+	        );
+	        redirect(base_url().'lk');
+		}
+	}
+
+	public function hapus($id){
+		$hapus=$this->M_lk->hapuslk($id);
+		if($hapus){
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Success!</strong> Data berhasil dihapus !</div>'
+	        );
+	        redirect(base_url().'lk');
+		}else{
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Gagal!</strong> Data gagal dihapus !</div>'
 	        );
 	        redirect(base_url().'lk');
 		}
