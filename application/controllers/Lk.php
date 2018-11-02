@@ -78,4 +78,39 @@ class Lk extends CI_Controller {
 	        redirect(base_url().'lk');
 		}
 	}
+
+	public function hapusdetail($idlk,$id){
+		$hapus=$this->M_lk->hapusdetail($id);
+		if($hapus){
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Success!</strong> Data berhasil dihapus !</div>'
+	        );
+	        redirect(base_url().'lk/formdetaillk/'.$idlk);
+		}else{
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Gagal!</strong> Data gagal dihapus !</div>'
+	        );
+	        redirect(base_url().'lk/formdetaillk/'.$idlk);
+		}
+	}
+
+	public function prosessimpandetail(){
+		$id=$this->input->post('idlk',true);
+		$simpan=$this->M_lk->simpandetail();
+		if($simpan){
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Success!</strong> Data berhasil Disimpan !</div>'
+	        );
+	        redirect(base_url().'lk/formdetaillk/'.$id);
+		}else{
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Gagal!</strong> Data gagal Disimpan !</div>'
+	        );
+	        redirect(base_url().'lk/formdetaillk/'.$id);
+		}
+	}
 }

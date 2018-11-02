@@ -48,6 +48,7 @@
                   <div class="control-group primary">
                     <label class="control-label" for="inputWarning" >Nama Akun</label>
                     <div class="controls">
+                      <input type="hidden" name="idlk" value="<?=$id?>" class="span6" id="idlk">
                       <input type="text" name="namaakun" class="span6" id="namaakun">
                       <span class="help-inline"></span>
                     </div>
@@ -71,13 +72,15 @@
                       <span class="help-inline"></span>
                     </div>
                   </div> 
+                 <!--  0=kas 1=surat berharga 2=piutang dagang 3=persediaan 4=aktiva tetap 5=penjualan 6=hpp 7=biaya operasi 8=biaya bunga 9=pajak penghasilan 10=laba stlh pajak 11=laba bersih -->
                   <div class="control-group primary">
                     <label class="control-label" for="inputWarning" >Jenis Akun</label>
                     <div class="controls">
                        <select name="jenisakun" class="span6 chosen" id="jenisakun">
                         <option value="">--Pilih--</option>
-                        <option value="1">Kas</option>
-                        <option value="2">Surat Berharga</option>
+                        <option value="0">Kas</option>
+                        <option value="1">Surat Berharga</option>
+                        <option value="2">Piutang Dagang</option>
                         <option value="3">Persediaan</option>
                         <option value="4">Aktiva Tetap</option>
                         <option value="5">Penjualan</option>
@@ -97,8 +100,8 @@
                     <div class="controls">
                        <select name="jenislaporan" class="span6 chosen" id="jenislaporan">
                         <option value="">--Pilih--</option>
-                        <option value="1">Neraca</option>
-                        <option value="2">Laba Rugi</option>
+                        <option value="0">Neraca</option>
+                        <option value="1">Laba Rugi</option>
                        </select>
                        <span class="help-inline"></span>
                     </div>

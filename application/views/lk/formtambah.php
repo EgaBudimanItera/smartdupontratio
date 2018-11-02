@@ -52,8 +52,8 @@
                          <option value="">--Pilih--</option>
                          <?php
                          $awal=date('Y');
-                         $akhir=$awal+5;
-                         $awal=$awal-5;
+                         $akhir=$awal+2;
+                         $awal=$awal-10;
                          for($i=$awal;$i<=$akhir;$i++){
                          ?>
                           <option value="<?=$i?>"><?=$i?></option>

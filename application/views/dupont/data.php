@@ -61,9 +61,20 @@
                     <td><?=$l->namaperusahaan?></td>
                     <td><?=$l->tahun?></td>
                     <td>
-                      <a data-toggle="tooltip" data-placement="bottom" title="Hitung" class="btn btn-xs btn-warning" href="<?=base_url()?>lk/formdetaillk/<?=$l->id?>">
+                      <?php
+                      if($l->statushitung==0){
+                      ?><a data-toggle="tooltip" data-placement="bottom" title="Hitung" class="btn btn-xs btn-primary" href="<?=base_url()?>dupont/formhitung/<?=$l->id?>">
+                        <i class="icon-tasks"></i>                
+                      </a>
+                      <?php
+                      }else{
+                      ?>
+                      <a data-toggle="tooltip" data-placement="bottom" title="Detail" class="btn btn-xs btn-warning" href="<?=base_url()?>dupont/formdetail/<?=$l->id?>">
                         <i class="icon-eye-open"></i>                
                       </a>
+                      <?php
+                      }
+                      ?>
                       <a data-toggle="tooltip" data-placement="bottom" title="Hapus" onclick="return confirm('yakin akan menghapus data ini?')" class="btn btn-xs btn-danger" href="<?=base_url()?>lk/hapus/<?=$l->id?>" >
                         <i class="icon-trash"></i>  
                       </a>

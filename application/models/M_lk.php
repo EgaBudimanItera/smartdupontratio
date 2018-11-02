@@ -30,13 +30,31 @@ class M_lk extends CI_Model {
         return true;
 	}
 
+	function simpandetail(){
+		$data=array(
+			'idlk'=>$this->input->post('idlk'),
+			'namaakun'=>$this->input->post('namaakun'),
+			'dk'=>$this->input->post('dk'),
+			'jumlah'=>$this->input->post('jumlah'),
+			'jenisakun'=>$this->input->post('jenisakun'),
+			'jenislaporan'=>$this->input->post('jenislaporan'),
+		);
+		$this->db->insert('detaillaporankeuangan', $data);
+        return true;
+	}
+
 	function hapuslk($id){
 		$this->db->delete('laporankeuangan', array('id' => $id)); 
         return true;
 	}
 
+	function hapusdetail($id){
+		$this->db->delete('detaillaporankeuangan', array('id' => $id)); 
+        return true;
+	}
+
 	function detaillk($id){
-		$query = $this->db->get_where('detaillaporankeuangan',array('id'=>$id));
+		$query = $this->db->get_where('detaillaporankeuangan',array('idlk'=>$id));
     	return $query;
 	}
 }

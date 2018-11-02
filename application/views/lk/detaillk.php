@@ -36,7 +36,13 @@
                 </span>
             </div>
             <div class="widget-body">
-             <div><a href="<?=base_url()?>lk/formtambahdetail/<?=$listlk->id?>" class="btn btn-primary">Tambah Data Detail</a></div>
+              <div>
+                <button type="button" class="btn btn-primary" onclick="self.history.back()">
+                    <i class="icon-arrow-left"></i> Kembali
+                  </button>
+                <a href="<?=base_url()?>lk/formtambahdetail/<?=$listlk->id?>" class="btn btn-primary">Tambah Data Detail</a>
+
+              </div>
              <br>
              <div id="info-alert"><?=@$this->session->flashdata('msg')?></div>
 
@@ -64,26 +70,59 @@
                     <th class="hidden-phone">Aksi</th>
                   </tr>
                 </thead>
+
                 <tbody>
-                 <!-- <?php
+                  <?php
+//0=kas 1=surat berharga 2=piutang dagang 3=persediaan 4=aktiva tetap 5=penjualan 6=hpp 7=biaya operasi 8=biaya bunga 9=pajak penghasilan 10=laba stlh pajak 11=laba bersih
                     $no = 1;
                     foreach ($list as $l) {
+                      if($l->jenislaporan=='0'){
+                        $jenislaporan="Neraca";
+                      }else{
+                        $jenislaporan="Laba Rugi";
+                      };
+                      if($l->jenisakun==0){
+                        $jenisakun="Kas";
+                      }elseif($l->jenisakun==1){
+                        $jenisakun="Surat Berharga";
+                      }elseif($l->jenisakun==2){
+                        $jenisakun="Piutang Dagang";
+                      }elseif($l->jenisakun==3){
+                        $jenisakun="Persediaan";
+                      }elseif($l->jenisakun==4){
+                        $jenisakun="Aktiva Tetap";
+                      }elseif($l->jenisakun==5){
+                        $jenisakun="Penjualan";
+                      }elseif($l->jenisakun==6){
+                        $jenisakun="HPP";
+                      }elseif($l->jenisakun==7){
+                        $jenisakun="Biaya Operasi";
+                      }elseif($l->jenisakun==8){
+                        $jenisakun="Biaya Bunga";
+                      }elseif($l->jenisakun==9){
+                        $jenisakun="Pph";
+                      }elseif($l->jenisakun==10){
+                        $jenisakun="Laba stlh Pajak";
+                      }elseif($l->jenisakun==11){
+                        $jenisakun="Laba Bersih";
+                      }elseif($l->jenisakun==12){
+                        $jenisakun="Lain-lain";
+                      }
                   ?>
                   <tr>
                     <td><?=$no++?>.</td>
-                    <td><?=$l->idperusahaan?></td>
-                    <td><?=$l->namaperusahaan?></td>
-                    <td><?=$l->tahun?></td>
+                    <td><?=$l->namaakun?></td>
+                    <td><?=$l->dk?></td>
+                    <td><?=number_format($l->jumlah,0,',','.')?></td>
+                    <td><?=$jenisakun?></td>
+                    <td><?=$jenislaporan?></td>
                     <td>
-                      <a data-toggle="tooltip" data-placement="bottom" title="Edit" class="btn btn-xs btn-warning" href="<?=base_url()?>lk/formubah/<?=$l->id?>">
-                        <i class="icon-pencil"></i>                
-                      </a>
-                      <a data-toggle="tooltip" data-placement="bottom" title="Hapus" onclick="return confirm('yakin akan menghapus data ini?')" class="btn btn-xs btn-danger" href="<?=base_url()?>lk/hapus/<?=$l->id?>" >
+                      <a data-toggle="tooltip" data-placement="bottom" title="Hapus" onclick="return confirm('yakin akan menghapus data ini?')" class="btn btn-xs btn-danger" href="<?=base_url()?>lk/hapusdetail/<?=$l->idlk?>/<?=$l->id?>" >
                         <i class="icon-trash"></i>  
                       </a>
                     </td>
                   </tr>
-                  <?php } ?> -->
+                  <?php } ?>
                 </tbody>
               </table>
             </div>
