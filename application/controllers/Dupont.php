@@ -26,6 +26,15 @@ class Dupont extends CI_Controller {
 		$this->load->view('template/wrapper',$data);
 	}
 
+	public function formdetail($id){
+		$data=array(
+			'page'=>'dupont/formdetail',
+			'link'=>'dupont',
+			'rasio'=>$this->M_dupont->hitungdupont($id),
+		);
+		$this->load->view('template/wrapper',$data);
+	}
+
 	public function prosessimpan(){
 		$simpan=$this->M_dupont->simpan();
 		if($simpan){

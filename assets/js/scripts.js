@@ -1758,6 +1758,53 @@ var App = function () {
             }]
         });
 
+        $('#npm').dataTable({
+            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+            "sPaginationType": "bootstrap",
+            "oLanguage": {
+                "sLengthMenu": "_MENU_ records per page",
+                "oPaginate": {
+                    "sPrevious": "Prev",
+                    "sNext": "Next"
+                }
+            },
+            "aoColumnDefs": [{
+                'bSortable': false,
+                'aTargets': [0]
+            }]
+        });
+
+        $('#tato').dataTable({
+            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+            "sPaginationType": "bootstrap",
+            "oLanguage": {
+                "sLengthMenu": "_MENU_ records per page",
+                "oPaginate": {
+                    "sPrevious": "Prev",
+                    "sNext": "Next"
+                }
+            },
+            "aoColumnDefs": [{
+                'bSortable': false,
+                'aTargets': [0]
+            }]
+        });
+        $('#roi').dataTable({
+            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+            "sPaginationType": "bootstrap",
+            "oLanguage": {
+                "sLengthMenu": "_MENU_ records per page",
+                "oPaginate": {
+                    "sPrevious": "Prev",
+                    "sNext": "Next"
+                }
+            },
+            "aoColumnDefs": [{
+                'bSortable': false,
+                'aTargets': [0]
+            }]
+        });
+
         jQuery('#sample_1 .group-checkable').change(function () {
             var set = jQuery(this).attr("data-set");
             var checked = jQuery(this).is(":checked");
