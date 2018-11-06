@@ -46,7 +46,7 @@
                     <ul class="sub">
                         <li class="<?php if($link=='dupont'){echo'active';}?>"><a href="<?=base_url()?>dupont">Rasio Du Pont </a></li>
                         <li class="<?php if($link=='distribusi'){echo'active';}?>"><a href="<?=base_url()?>distribusi">Distribusi</a></li>
-                        <li class="<?php if($link=='keterangan'){echo'active';}?>"><a href="#">Keterangan Perhitungan</a></li>
+                        <li class="<?php if($link=='keterangan'){echo'active';}?>"><a href="<?=base_url()?>keterangan">Keterangan Perhitungan</a></li>
                     </ul>
                 </li>
             </ul>

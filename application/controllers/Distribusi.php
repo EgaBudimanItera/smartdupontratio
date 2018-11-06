@@ -41,17 +41,52 @@ class Distribusi extends CI_Controller {
 			'page'=>'distribusi/formhitungdistribusi',
 			'link'=>'distribusi',
 			'idperiode'=>$id,
-			'listnpm'=>'',
-			'listtato'=>'',
-			'listroi'=>'',
+			'listnpm'=>$this->M_distribusi->listnpm($tahun)->result(),
+			'listtato'=>$this->M_distribusi->listtato($tahun)->result(),
+			'listroi'=>$this->M_distribusi->listroi($tahun)->result(),
 			'id'=>$id,
 			'tahun'=>$tahun,
+			'jumlahperusahaan'=>$this->M_distribusi->listnpm($tahun)->num_rows(),
+			'la'=>$this->M_distribusi->listanak($tahun),
+		);
+		$this->load->view('template/wrapper',$data);
+	}	
+
+	public function detailhitungdistribusi($id,$tahun){
+		$data=array(
+			'page'=>'distribusi/detailhitungdistribusi',
+			'link'=>'distribusi',
+			'idperiode'=>$id,
+			'listnpm'=>$this->M_distribusi->listnpm($tahun)->result(),
+			'listtato'=>$this->M_distribusi->listtato($tahun)->result(),
+			'listroi'=>$this->M_distribusi->listroi($tahun)->result(),
+			'id'=>$id,
+			'tahun'=>$tahun,
+			'jumlahperusahaan'=>$this->M_distribusi->listnpm($tahun)->num_rows(),
+			'la'=>$this->M_distribusi->listanak($tahun),
 		);
 		$this->load->view('template/wrapper',$data);
 	}	
 
 	public function prosessimpanhitungdistribusi(){
 		$simpan=$this->M_distribusi->simpanhitungdistribusi();
+		if($simpan){
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-success"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Success!</strong> Data berhasil disimpan !</div>'
+	        );
+	        redirect(base_url().'distribusi');
+		}else{
+			$this->session->set_flashdata(
+	            'msg', 
+	            '<div class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" arial-label="close">&times;</a><strong>Gagal!</strong> Data gagal disimpan !</div>'
+	        );
+	        redirect(base_url().'distribusi');
+		}
+	}
+
+	public function simpandetail(){
+		$simpan=$this->M_distribusi->simpandetail();
 		if($simpan){
 			$this->session->set_flashdata(
 	            'msg', 

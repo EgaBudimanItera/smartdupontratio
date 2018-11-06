@@ -66,26 +66,10 @@
                     <td><?=$l->namaperusahaan?></td>
                     <td><?=$l->distribusi?></td>
                     <td>
-                      <?php 
-                      if($l->distribusi==0&&$l->jumlahdupont!=0){
-                      ?>
-                      <a data-toggle="tooltip" data-placement="bottom" title="Hitung Distribusi" class="btn btn-xs btn-success" href="<?=base_url()?>distribusi/formhitungdistribusi/<?=$idperiode?>/<?=$l->tahun?>">
-                        <i class="icon-tasks"></i>                
-                      </a>
-                      <?php 
-                      }elseif($l->distribusi>0){
-                      ?>
-                      <a data-toggle="tooltip" data-placement="bottom" title="Detail" class="btn btn-xs btn-warning" href="<?=base_url()?>distribusi/detailhitungdistribusi/<?=$idperiode?>/<?=$l->tahun?>">
+                      
+                      <a data-toggle="tooltip" data-placement="bottom" title="Detail" class="btn btn-xs btn-warning" href="<?=base_url()?>keterangan/detaildistribusi/<?=$idperiode?>/<?=$l->tahun?>">
                         <i class="icon-eye-open"></i>                
                       </a>
-                      <?php
-                      }
-                      ?>
-                      
-                     
-                      <!-- <a data-toggle="tooltip" data-placement="bottom" title="Hapus" onclick="return confirm('yakin akan menghapus data ini?')" class="btn btn-xs btn-danger" href="<?=base_url()?>distribusi/hapus/<?=$l->idperiode?>" >
-                        <i class="icon-trash"></i>  
-                      </a> -->
                     </td>
                   </tr>
                   <?php } ?>

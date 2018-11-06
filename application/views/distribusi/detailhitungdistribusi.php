@@ -325,7 +325,7 @@
                 </div>
               </div>
               <div class="form-actions">
-                  <button type="submit" class="btn btn-primary"><i class="icon-ok"></i>Simpan Data</button>
+                 
                   
               </div> 
             </div>

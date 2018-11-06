@@ -36,19 +36,14 @@
                 </span>
             </div>
             <div class="widget-body">
-             <div><a href="<?=base_url()?>distribusi/formtambah" class="btn btn-primary">Tambah Data</a></div>
-             <br>
-             <div id="info-alert"><?=@$this->session->flashdata('msg')?></div>
-
               <table class="table table-striped table-bordered" id="sample_1">
                 <thead>
                   <tr>
                     <th class="hidden-phone">No</th>
-                    <th class="hidden-phone">Tahun</th>
-                    <th class="hidden-phone">Jumlah Perusahaan</th>
-                    <th class="hidden-phone">Jumlah Dupont</th>
-                    <th class="hidden-phone">Nama Perusahaan</th>
-                    <th class="hidden-phone">Distribusi</th>
+                    <th class="hidden-phone">ID Periode</th>
+                    <th class="hidden-phone">Tanggal Periode</th>
+                    <th class="hidden-phone">Keterangan</th>
+                    <th class="hidden-phone">Jumlah Data</th>
                     <th class="hidden-phone">Aksi</th>
                   </tr>
                 </thead>
@@ -60,32 +55,14 @@
                   ?>
                   <tr>
                     <td><?=$no++?>.</td>
-                    <td><?=$l->tahun?></td>
-                    <td><?=$l->jumlahperusahaan?></td>
-                    <td><?=$l->jumlahdupont?></td>
-                    <td><?=$l->namaperusahaan?></td>
-                    <td><?=$l->distribusi?></td>
+                    <td><?=$l->idperiode?></td>
+                    <td><?=$l->tgldistribusi?></td>
+                    <td><?=$l->ket?></td>
+                    <td><?=$l->jumlah?></td>
                     <td>
-                      <?php 
-                      if($l->distribusi==0&&$l->jumlahdupont!=0){
-                      ?>
-                      <a data-toggle="tooltip" data-placement="bottom" title="Hitung Distribusi" class="btn btn-xs btn-success" href="<?=base_url()?>distribusi/formhitungdistribusi/<?=$idperiode?>/<?=$l->tahun?>">
-                        <i class="icon-tasks"></i>                
-                      </a>
-                      <?php 
-                      }elseif($l->distribusi>0){
-                      ?>
-                      <a data-toggle="tooltip" data-placement="bottom" title="Detail" class="btn btn-xs btn-warning" href="<?=base_url()?>distribusi/detailhitungdistribusi/<?=$idperiode?>/<?=$l->tahun?>">
+                      <a data-toggle="tooltip" data-placement="bottom" title="Detail" class="btn btn-xs btn-warning" href="<?=base_url()?>keterangan/datadetail/<?=$l->idperiode?>">
                         <i class="icon-eye-open"></i>                
                       </a>
-                      <?php
-                      }
-                      ?>
-                      
-                     
-                      <!-- <a data-toggle="tooltip" data-placement="bottom" title="Hapus" onclick="return confirm('yakin akan menghapus data ini?')" class="btn btn-xs btn-danger" href="<?=base_url()?>distribusi/hapus/<?=$l->idperiode?>" >
-                        <i class="icon-trash"></i>  
-                      </a> -->
                     </td>
                   </tr>
                   <?php } ?>
