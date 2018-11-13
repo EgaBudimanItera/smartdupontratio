@@ -17,6 +17,27 @@ class Distribusi extends CI_Controller {
 		$this->load->view('template/wrapper',$data);
 	}
 
+	public function viewlaporan(){
+		$data=array(
+			'page'=>'laporan/datadistribusi',
+			'link'=>'lapdistribusi',
+			'list' => $this->M_distribusi->listall()->result(),
+		);
+		$this->load->view('template/wrapper',$data);
+	}
+
+	public function ceklaporan($idperiode){
+		$data=array(
+			'page'=>'laporan/cekdistribusi',
+			'link'=>'lapdistribusi',
+			'npm'=>$this->M_distribusi->viewketnpm($idperiode)->result(),
+			'tato'=>$this->M_distribusi->viewkettato($idperiode)->result(),
+			'roi'=>$this->M_distribusi->viewketroi($idperiode)->result(),
+			'idperiode'=>$idperiode,
+		);
+		$this->load->view('template/wrapper',$data);
+	}
+
 	public function formtambah(){
 		$data=array(
 			'page'=>'distribusi/formtambah',

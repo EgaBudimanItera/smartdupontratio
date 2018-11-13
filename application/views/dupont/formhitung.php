@@ -323,7 +323,7 @@
                     <label class="control-label" for="inputWarning">Return On Investment</label>
                     <div class="controls">
                        <input type="hidden" class="span6" id="roi1" required name="roi1" value="<?=$rasio["roi"]?>" readonly />
-                       <input type="text" class="span6" id="roi2" required name="roi2" value="<?=number_format($rasio["roi"],0,',','.')?>" readonly />
+                       <input type="text" class="span6" id="roi2" required name="roi2" value="<?=number_format($rasio["roi"],4,',','.')?>" readonly />
                        <span class="help-inline"></span>
                     </div>
                   </div> 

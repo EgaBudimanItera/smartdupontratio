@@ -36,10 +36,26 @@ class M_distribusi extends CI_Model {
          return true;
     }
 
+    function viewketnpm($idperiodehitung){
+        $query=$this->db->query("SELECT tahun,namaperusahaan,persenlababersih,COALESCE((select ket from ketdistribusi where ketdistribusi.tahun=laporankeuangan.tahun and ketdistribusi.rasio='0' and rasiodupont.persenlababersih>=n1 and rasiodupont.persenlababersih<=n2 and idperiodehitung='$idperiodehitung'),'Belum Dihitung') as keterangan from rasiodupont join laporankeuangan on idlk=laporankeuangan.id join perusahaan on laporankeuangan.idperusahaan=perusahaan.idperusahaan");
+        return $query;
+    }
+
+    function viewkettato($idperiodehitung){
+        $query=$this->db->query("SELECT tahun,namaperusahaan,tato,COALESCE((select ket from ketdistribusi where ketdistribusi.tahun=laporankeuangan.tahun and ketdistribusi.rasio='1' and rasiodupont.tato>=n1 and rasiodupont.tato<=n2 and idperiodehitung='$idperiodehitung'),'Belum Dihitung') as keterangan from rasiodupont join laporankeuangan on idlk=laporankeuangan.id join perusahaan on laporankeuangan.idperusahaan=perusahaan.idperusahaan");
+        return $query;
+    }
+
+    function viewketroi($idperiodehitung){
+       $query=$this->db->query("SELECT tahun,namaperusahaan,roi,tahun from rasiodupont join laporankeuangan on idlk=laporankeuangan.id join perusahaan on laporankeuangan.idperusahaan=perusahaan.idperusahaan");
+        return $query;
+    }
+
     function simpandetail(){
         $idperiode=$this->input->post('idperiode',true);
         $tahun=$this->input->post('tahun',true);
         $data=$this->listanak($tahun);
+
         $datanpm=array(
             'idperiode'=>$idperiode,
             'rasio'=>'0',
@@ -53,10 +69,19 @@ class M_distribusi extends CI_Model {
         $n1npm=$data['n1npm'];
         $n2npm=$data['cnpm']+$n1npm;
         for($a=1;$a<=$data['k'];$a++){
+            if($a==1){
+                $ket='Sangat Tidak Sehat';
+            }elseif($a==2){
+                $ket='Tidak Sehat';
+            }elseif($a==3){
+                $ket='Sehat';
+            }elseif($a==4){
+                $ket='Sangat Sehat';
+            }
             $insnpm[$a]['idperiodehitung'] = $idperiode;
             $insnpm[$a]['tahun'] = $tahun;
             $insnpm[$a]['rasio'] = '0';
-            $insnpm[$a]['ket'] = $a;
+            $insnpm[$a]['ket'] = $ket;
             $insnpm[$a]['n1'] = $n1npm;
             $insnpm[$a]['n2'] = $n2npm;
             $n1npm=$n1npm+$data['cnpm'];
@@ -77,10 +102,19 @@ class M_distribusi extends CI_Model {
         $n1tato=$data['n1tato'];
         $n2tato=$data['ctato']+$n1tato;
         for($a=1;$a<=$data['k'];$a++){
+            if($a==1){
+                $ket='Sangat Tidak Sehat';
+            }elseif($a==2){
+                $ket='Tidak Sehat';
+            }elseif($a==3){
+                $ket='Sehat';
+            }elseif($a==4){
+                $ket='Sangat Sehat';
+            }
             $instato[$a]['idperiodehitung'] = $idperiode;
             $instato[$a]['tahun'] = $tahun;
             $instato[$a]['rasio'] = '1';
-            $instato[$a]['ket'] = $a;
+            $instato[$a]['ket'] = $ket;
             $instato[$a]['n1'] = $n1tato;
             $instato[$a]['n2'] = $n2tato;
             $n1tato=$n1tato+$data['ctato'];
@@ -103,15 +137,26 @@ class M_distribusi extends CI_Model {
         $n1roi=$data['n1roi'];
         $n2roi=$data['cnpm']+$n1roi;
         for($a=1;$a<=$data['k'];$a++){
+            if($a==1){
+                $ket='Sangat Tidak Sehat';
+            }elseif($a==2){
+                $ket='Tidak Sehat';
+            }elseif($a==3){
+                $ket='Sehat';
+            }elseif($a==4){
+                $ket='Sangat Sehat';
+            }
             $insroi[$a]['idperiodehitung'] = $idperiode;
             $insroi[$a]['tahun'] = $tahun;
             $insroi[$a]['rasio'] = '2';
-            $insroi[$a]['ket'] = $a;
+            $insroi[$a]['ket'] = $ket;
             $insroi[$a]['n1'] = $n1roi;
             $insroi[$a]['n2'] = $n2roi;
             $n1roi=$n1roi+$data['croi'];
             $n2roi=$n2roi+$data['croi'];
         }
+        //var_dump($insroi);
+        //exit();
         $this->db->insert_batch('ketdistribusi', $insroi);
 
         return true;
@@ -145,7 +190,7 @@ class M_distribusi extends CI_Model {
     }
 
     function listanak($tahun){
-        $nilai=$this->db->query("SELECT count(*) as jumlah,min(persenlababersih)as n1npm,max(persenlababersih) as n2npm,min(tato) as n1tato,MAX(tato) as n2tato,min(roi) as n1roi,max(roi) as n2roi from rasiodupont join laporankeuangan on idlk=laporankeuangan.id WHERE tahun='2012' and statushitung='1'")->row();
+        $nilai=$this->db->query("SELECT count(*) as jumlah,min(persenlababersih)as n1npm,max(persenlababersih) as n2npm,min(tato) as n1tato,MAX(tato) as n2tato,min(roi) as n1roi,max(roi) as n2roi from rasiodupont join laporankeuangan on idlk=laporankeuangan.id WHERE tahun='$tahun' and statushitung='1'")->row();
         $n1npm=$nilai->n1npm;
         $n2npm=$nilai->n2npm;
         $n1tato=$nilai->n1tato;
@@ -154,7 +199,8 @@ class M_distribusi extends CI_Model {
         $n2roi=$nilai->n2roi;
         $jumlahperusahaan=$nilai->jumlah;
         $l=log($jumlahperusahaan);
-        $k=round(1+(3.322*log($jumlahperusahaan)));
+        // $k=round(1+(3.322*log($jumlahperusahaan)));
+        $k=4;
         $rnpm=$n2npm-$n1npm;
         $rtato=$n2tato-$n1tato;
         $rroi=$n2roi-$n1roi;
@@ -183,6 +229,8 @@ class M_distribusi extends CI_Model {
             'ctato'=>$ctato,
             'croi'=>$croi,
         );
+        // var_dump($datahasil);
+        // exit();
         return $datahasil;
     }
 }

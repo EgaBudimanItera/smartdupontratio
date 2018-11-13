@@ -51,4 +51,15 @@ class Dupont extends CI_Controller {
 	        redirect(base_url().'dupont');
 		}
 	}
+
+	public function viewlaporan(){
+		$query=$this->db->query("SELECT CONCAT(namaperusahaan,'-',tahun)as perusahaan,persenlababersih,tato,roi from rasiodupont join laporankeuangan on idlk=laporankeuangan.id join perusahaan on perusahaan.idperusahaan=laporankeuangan.idperusahaan");
+		$data=array(
+			'page'=>'laporan/datadupont',
+			'link'=>'lapdupont',
+			'list'=>$query->result(),
+			'script'=>'laporan/script',
+		);
+		$this->load->view('template/wrapper',$data);
+	}
 }

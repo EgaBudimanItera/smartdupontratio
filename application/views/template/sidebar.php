@@ -49,6 +49,16 @@
                         <li class="<?php if($link=='keterangan'){echo'active';}?>"><a href="<?=base_url()?>keterangan">Keterangan Perhitungan</a></li>
                     </ul>
                 </li>
+                <li class="has-sub <?php if($link=='lapdupont'||$link=='lapdistribusi'){echo'active';}?>">
+                    <a href="javascript:;" class="">
+                        <span class="icon-box"> <i class="icon-tasks"></i></span> Laporan
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub">
+                        <li class="<?php if($link=='lapdupont'){echo'active';}?>"><a href="<?=base_url()?>dupont/viewlaporan">Rasio Du Pont </a></li>
+                        <li class="<?php if($link=='lapdistribusi'){echo'active';}?>"><a href="<?=base_url()?>distribusi/viewlaporan">Distribusi</a></li>
+                    </ul>
+                </li>
             </ul>
 			<!-- END SIDEBAR MENU -->
 		</div>

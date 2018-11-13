@@ -55,7 +55,7 @@ class M_dupont extends CI_Model {
 			$tato=$penjualan/$totalaktiva;	
 		}
 		
-		$roi=$persenlaba*$tato*100;
+		$roi=$persenlaba*$tato;
 
 		$hasil=array(
 			'kas'=>$kas,
