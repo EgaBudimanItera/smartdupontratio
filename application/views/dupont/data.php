@@ -72,6 +72,9 @@
                       <a data-toggle="tooltip" data-placement="bottom" title="Detail" class="btn btn-xs btn-warning" href="<?=base_url()?>dupont/formdetail/<?=$l->id?>">
                         <i class="icon-eye-open"></i>                
                       </a>
+                      <a data-toggle="tooltip" data-placement="bottom" title="Upload Gambar Dupont" class="btn btn-xs btn-success" href="<?=base_url()?>dupont/formupload/<?=$l->id?>">
+                        <i class="icon-upload"></i>                
+                      </a>
                       <?php
                       }
                       ?>

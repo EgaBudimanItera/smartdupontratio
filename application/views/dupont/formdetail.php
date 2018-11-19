@@ -333,6 +333,24 @@
               <!-- END EXAMPLE TABLE widget-->
             </div>
           </div>
+          <div class="row-fluid">
+            <div class="span12">
+              <!-- BEGIN EXAMPLE TABLE widget-->
+              <div class="widget">
+                <div class="widget-title">
+                    <h4><i class="icon-reorder"></i>Gambar Rasio Dupont</h4>
+                    <span class="tools">
+                        <a href="javascript:;" class="icon-chevron-down"></a>
+                        <a href="javascript:;" class="icon-remove"></a>
+                    </span>
+                </div>
+                <div class="widget-body">
+                 <center> <img src="<?=base_url()?>assets/file_upload/<?=$list->gambar?>" width="100%"></center>
+                </div>
+              </div>
+              <!-- END EXAMPLE TABLE widget-->
+            </div>
+          </div>
         </form>            
     </div>
     <!-- END PAGE CONTENT-->

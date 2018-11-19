@@ -116,4 +116,21 @@ class M_dupont extends CI_Model {
 		}
 		
 	}
+
+	function listall($id){
+		return $this->db->get_where('rasiodupont',array('id'=>$id));
+	}
+
+	function listjum(){
+		return $this->db->get('rasiodupont');
+	}
+
+	function ubah($gambar){
+        $data=array(
+            'gambar'=>$gambar,
+        );
+        $this->db->where('id',$this->input->post('iddupont',true));
+        $this->db->update('rasiodupont',$data);
+        return trus;
+    }
 }

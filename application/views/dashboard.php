@@ -36,20 +36,48 @@
               </span>
             </div>
             <div class="widget-body">
-              <!-- <div class="row-fluid metro-overview-cont">
+              <div class="row-fluid metro-overview-cont">
                 <div data-desktop="span2" data-tablet="span4" class="responsive span4">
                   <div class="metro-overview turquoise-color clearfix">
                     <div class="display">
                       <i class="icon-group"></i>
-                      <div class="percent">+55%</div>
+                      <div class="percent"></div>
                     </div> 
                     <div class="details">
-                      <div class="numbers">530</div>
-                      <div class="title">new user</div>
+                      <div class="numbers"><?=$perusahaan?></div>
+                      <div class="title">Perusahaan</div>
                     </div>
                   </div>   
-                </div>  --> 
+                </div>  
+                
+                <div data-desktop="span2" data-tablet="span4" class="responsive span4">
+                  <div class="metro-overview green-color clearfix">
+                    <div class="display">
+                      <i class="icon-book"></i>
+                      <div class="percent"></div>
+                    </div> 
+                    <div class="details">
+                      <div class="numbers"><?=$lk?></div>
+                      <div class="title">Laporan Keuangan</div>
+                    </div>
+                  </div>   
+                </div>  
+
+                <div data-desktop="span2" data-tablet="span4" class="responsive span4">
+                  <div class="metro-overview red-color clearfix">
+                    <div class="display">
+                      <i class="icon-book"></i>
+                      <div class="percent"></div>
+                    </div> 
+                    <div class="details">
+                      <div class="numbers"><?=$jum?></div>
+                      <div class="title">Rasio Dupont</div>
+                    </div>
+                  </div>   
+                </div>  
+
               </div>
+              <img src="<?=base_url()?>assets/modeldupont.png">
             </div>
           </div>
           <!-- END SITE VISITS PORTLET-->
