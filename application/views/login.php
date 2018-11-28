@@ -22,6 +22,7 @@ Website: http://thevectorlab.net/
   <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet" />
   <link href="<?php echo base_url() ?>assets/css/style_responsive.css" rel="stylesheet" />
   <link href="<?php echo base_url() ?>assets/css/style_default.css" rel="stylesheet" id="style_color" />
+  
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
