@@ -80,51 +80,9 @@
               <img src="<?=base_url()?>assets/modeldupont.jpg">
               <br>
               <br>
-              <p>
-                Menurut (Harahap, 2004) Du Pont System merupakan suatu sistem analisis laporan keuangan yang memiliki cara sendiri dalam menganalisis laporan keuangannya. Cara sebenarnya hampir sama dengan analisis laporan keuangan biasa, namun pendekatan lebih integratif dan menggunakan komposisi laporan keuangan sebagai elemen analisisnya dengan mengurai pos-pos laporan keuangan sampai mendetail.</p>
-              <p>
-                Menurut (Arifin, 2004) Metode Du Pont merupakan suatu sistem analisis laporan keuangan secara integratif yang terkenal dengan metode Du Pont. Metode ini menggabung rasio aktivitas dan marjin laba terhadap penjualan, dan menunjukkan interaksi rasio-rasio dalam menentukan profitabilitas. Du Pont mengurai hubungan pos-pos laporan keuangan.
-              </p>
-              <p>
-                Menurut Lemiyana (2015) Du Pont System adalah suatu sistem analisis yang dimaksudkan untuk menunjukkan hubungan antara return on investment, assets turn over dan profit margin. Return on investment (ROI) adalah rasio keuntungan neto sesudah pajak dengan jumlah investasi sehingga dalam Du Pont diperhitungkan juga bunga dan pajak.
-
-              </p>
-              <p>
-                Tahap-tahap Dalam Melakukan Analisis Du Pont System
-              </p>
-              <p>
-                Du Pont menganggap penting angka Return on Investment (ROI) sehingga ia memulai analisisnya dari angka ini. ROI di hitung dari dua komponen:
-                <br><center><img src="<?=base_url()?>assets/imgdupo/1.jpg" style="width: 600px; height: 90px"></center>
-              </p>
-              <p>
-                Persentase laba bersih diambil dari laporan laba/rugi sedangkan Aset turnover diambil dari Neraca. Di sini tampak sekali Du pont ingin menganalisis laporan keuangan secara integratif (terpadu). Perhitungan komponen tersebut adalah sebagai berikut:
-              </p>
-              <p>
-                Persentase laba bersih dihitung dari:
-                <br><center><img src="<?=base_url()?>assets/imgdupo/2.jpg" style="width: 600px; height: 90px"></center>
-              </p>
-              <p>
-                Sedangkan Laba setelah pajak dihitung dari:
-                <br><center><img src="<?=base_url()?>assets/imgdupo/3.jpg" style="width: 600px; height: 90px"></center>
-              </p>
-              <p>
-                Penguraian pos-pos seperti ini akan dapat lebih memahami sumber dari rasio-rasio yang dihitung.
-              </p>
-               <p>
-                Aset Turnover dihitung sebagai berikut:
-                <br><center><img src="<?=base_url()?>assets/imgdupo/4.jpg" style="width: 600px; height: 90px"></center>
-              </p>
-              <p>
-                Total Aset dihitung dari:
-                <br><center><img src="<?=base_url()?>assets/imgdupo/5.jpg" style="width: 600px; height: 90px"></center>
-              </p>
-              <p>
-                Aktiva lancar terdiri dari:
-                <br><center><img src="<?=base_url()?>assets/imgdupo/6.jpg" style="width: 600px; height: 90px"></center>
-              </p>
-              <p>
-                Penguraian komponen laporan keuangan menjadi komponen kecil sampai pada pos-pos individual akan membantu memberikan gambaran lebih lengkap bagi analis.
-              </p>
+              <img src="<?=base_url()?>assets/11.jpg">
+              <br><br>
+              <img src="<?=base_url()?>assets/12.jpg">
             </div>
           </div>
           <!-- END SITE VISITS PORTLET-->
